@@ -188,7 +188,9 @@ function fig_review
     % Save handles to guidata
     handles.figure_review.Visible = 'on';
     guidata(handles.figure_review,handles);
-    addpath('Functions');
+    P = mfilename('fullpath');
+    [filepath,~,~] = fileparts(P);
+	addpath(fullfile(filepath, 'Functions'));
 end
 
 % ===============================================================================

@@ -45,7 +45,9 @@ function fig_launcher
         'Callback',@push_review_Callback);
     set(handles.figure_launcher,'Visible','on');
     guidata(handles.figure_launcher,handles);
-	addpath('Functions');
+    P = mfilename('fullpath');
+    [filepath,~,~] = fileparts(P);
+	addpath(fullfile(filepath, 'Functions'));
     % Check that VLC is installed
     axctl = actxcontrollist;
     index = strcmp(axctl(:,2),'VideoLAN.VLCPlugin.2');
